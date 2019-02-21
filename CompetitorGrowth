@@ -1,0 +1,14 @@
+Function CompetitorGrowth(StartDate As Date, EndDate As Date) As Double
+    
+    Dim StartCompetitorPrice, EndCompetitorPrice As Double
+    
+    If EndDate = 0 Then
+        EndDate = Date
+    End If
+    
+    StartCompetitorPrice = GetPrice("GB00B7LWFW05", StartDate)
+    EndCompetitorPrice = GetPrice("GB00B7LWFW05", EndDate)
+    
+    CompetitorGrowth = (EndCompetitorPrice - StartCompetitorPrice) / StartCompetitorPrice
+    
+End Function
